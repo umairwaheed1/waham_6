@@ -1,0 +1,24 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<h1>Product List By category </h1>
+<h1>Product Filter by Brand</h1>
+<h1>Product Filter by price </h1>
+<a href="{% url 'mobiles' %}" class="list-group-item list-group-item-action" aria-current="true">All Mobile</a>
+<a href ="{% url 'mobiledata' 'Vivo'%}" class="list-group-item list-group-item-action" aria-current="true">Vivo</a>
+<a href ="{% url 'mobiledata' 'Samsung'%}" class="list-group-item list-group-item-action" aria-current="true">Samsung</a>
+
+{% for product in mobiles %}
+
+<a href="{% url 'product-detail' product.id%}">Product Detail</a>
+
+       <img src="{{product.product_image.url}}" alt="" height="300" class="">
+       <div class="fw-bold">{{product.title}}</div>
+       <div class="fw-bold">{{product.discounted_price}}</div>
+       <small class="fw-light text-decoration-line-through">{{product.selling_price}}</small>
+
+
+
+    {% endfor %}
+
+{% endblock content %}

@@ -1,0 +1,15 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<h1>Product Detail Page</h1>
+
+   <h2>{{product.title}}</h2>
+   <img src="{{product.product_image.url}}" alt="" height="300" class="">
+   <hr>
+   <p>{{product.description}}</p> <br>
+   <h4>Rs. 13999 <small class="fw-light text-decoration-line-through">{{product.selling_price}}</small></h4> <br>
+
+   <h5 class="mt-5">Available Offers</h5>
+
+{%endblock content %}
+
